@@ -5,7 +5,7 @@ rowlen = 5
 collen = 5
 randstart = 1
 randend = 50
-repeat = 10
+repeat = 30
 
 nums_to_make = rowlen * collen
 
@@ -15,8 +15,19 @@ while this_instance <= repeat:
 
     tbl = []
 
+    #print(raw_tbl)
+    
+    coli = 0
+    tbl_print = ""
+    for i in raw_tbl:
+        if coli >= collen:
+            print(tbl_print.strip())
+            tbl_print = ""
+            coli = 0 
 
-
-    print(raw_tbl)
+        tbl_print += str(i) + " "
+        coli += 1 
+    print(tbl_print)
 
     this_instance += 1
+    print("==================")
